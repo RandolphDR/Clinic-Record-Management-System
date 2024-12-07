@@ -1,0 +1,661 @@
+@import url("root.css");
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: url("../arts/website-background.png") no-repeat center center / cover;
+}
+
+.System-Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 140px;
+}
+
+.System-Header h1 {
+  font-size: var(--h1-font-size);
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--green);
+}
+
+.System-Main-Container {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.System-Navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5rem;
+  padding-top: 2rem;
+}
+
+.System-Navigation button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 300px;
+  height: 80px;
+  font-size: 2rem;
+  font-family: var(--Montserrat);
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: var(--green);
+}
+
+.System-Navigation button img {
+  height: 70%;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+
+.System-Navigation button:active {
+  background: var(--darkgreen);
+}
+
+.form_close_button {
+  width: 30px;
+  height: 30px;
+  align-self: flex-end;
+  margin-right: 1rem;
+  position: fixed;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.form_close_button:active {
+  color: lightgray;
+}
+
+.Admin-Form {
+  width: 380px;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  background: var(--green);
+  border-radius: 2rem;
+  padding: 2rem 0;
+  z-index: 2;
+}
+
+.Admin-Form header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 70px;
+}
+
+.Admin-Form header img {
+  height: 100%;
+}
+
+.Admin-Form header h4 {
+  font-size: 3rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+}
+
+.Admin-Form header p {
+  font-size: 1rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+}
+
+.Admin-Form section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.Input_Container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.Input_Container label {
+  font-size: 1.1rem;
+  font-family: var(--Montserrat);
+  font-weight: bold;
+  color: var(--white);
+  margin-left: 1.5rem;
+}
+
+.Input_Container input {
+  width: 100%;
+  height: 35px;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  font-family: var(--Montserrat);
+  font-weight: 500;
+  color: black;
+}
+
+.admin_login_button {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: brown;
+  border: none;
+  outline: none;
+  width: 120px;
+  height: 30px;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.admin_login_button:active {
+  background: var(--darkgreen);
+}
+
+.Admin-Form footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Admin-Form footer p,
+.Admin-Form footer button {
+  font-size: 1rem;
+  font-family: var(--Montserrat);
+  font-weight: bold;
+  color: white;
+}
+
+.Admin-Form footer button {
+  border: none;
+  outline: none;
+  padding: 0.2rem 0.5rem;
+  background: brown;
+  border-radius: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.Create-Admin-Form {
+  width: 380px;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  background: var(--green);
+  border-radius: 2rem;
+  padding: 2rem 0 1rem 0;
+  z-index: 3;
+}
+
+.Create-Admin-Form header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 70px;
+}
+
+.Create-Admin-Form header img {
+  height: 100%;
+}
+
+.Create-Admin-Form header h4 {
+  font-size: 3rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+}
+
+.Create-Admin-Form header p {
+  font-size: 1rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+}
+
+.Create-Admin-Form section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.create_login_button {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: brown;
+  border: none;
+  outline: none;
+  width: 190px;
+  height: 30px;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.create_login_button:active {
+  background: var(--darkgreen);
+}
+
+.Create-Admin-Form footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Create-Admin-Form footer p,
+.Create-Admin-Form footer button {
+  font-size: 0.9rem;
+  font-family: var(--Montserrat);
+  font-weight: bold;
+  color: white;
+}
+
+.Create-Admin-Form footer button {
+  border: none;
+  outline: none;
+  padding: 0.2rem 0.5rem;
+  background: brown;
+  border-radius: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.Patient-Form {
+  position: fixed;
+  display: none;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.Patient-Information {
+  width: 40%;
+  height: 90%;
+  border-radius: 2rem;
+  background: var(--green);
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Close_Patient_Form {
+  top: 10%;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+  border: none;
+  outline: transparent;
+  background: none;
+  position: absolute;
+  cursor: pointer;
+}
+
+.Close_Patient_Form:active {
+  color: lightgray;
+}
+
+.Patient-Information header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 50px;
+}
+
+.Patient-Information header img {
+  height: 100%;
+}
+
+.Patient-Information header h5 {
+  font-size: 2rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+}
+
+.Patients-Information-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Patient-Image {
+  width: 220px;
+  height: 220px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  color: gray;
+  font-weight: 500;
+}
+
+.Patient-Image input {
+  display: none;
+}
+
+.Patient-Image:hover {
+  background-color: #f0f0f0;
+}
+
+.Patients-Information-Container aside {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Patient-Input-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Patient-Input-Container label {
+  font-size: 1rem;
+  font-family: var(--Montserrat);
+  font-weight: bold;
+  color: var(--white);
+}
+
+.Patient-Input-Container input,
+.Patient-Input-Container select {
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  padding: 0 0.4rem;
+  width: 170px;
+}
+
+.Patient-Illness-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0 2rem 0;
+  border-radius: 2rem;
+  background: var(--lightgreen);
+}
+
+.Patient-Illness-Container h3 {
+  font-size: 1.3rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+}
+
+.Patient-Illness-Input-Container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Patient-Illness {
+  width: 70%;
+  height: 35px;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  font-family: var(--Montserrat);
+  font-weight: 500;
+}
+
+.Patient-Illness-Date {
+  width: 30%;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+}
+
+.Patient-Submit-Button {
+  width: 100%;
+  height: 35px;
+  outline: transparent;
+  border: none;
+  font-size: 1rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+  background-color: brown;
+  border-radius: 1rem;
+}
+
+.Patient-Contacts-Section {
+  width: 15%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Contact-Section {
+  width: 100%;
+  height: 260px;
+  border-radius: 2rem;
+  background: var(--green);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Contact-Section h5 {
+  font-size: 2rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+}
+
+.Contact-Input-Container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.Contact-Input-Container label {
+  font-size: 1rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+}
+
+.Contact-Input-Container input {
+  width: 100%;
+  height: 20px;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-family: var(--Montserrat);
+  font-weight: 500;
+}
+
+.Height-Section {
+  width: 100%;
+  height: 200px;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--green);
+}
+
+.Height-Section header,
+.Weight-Section header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Height-Section header img,
+.Weight-Section header img {
+  height: 100%;
+}
+
+.Height-Section header h5,
+.Weight-Section header h5 {
+  font-size: 2rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+}
+
+.Patient-Height,
+.Patient-Weight {
+  width: 90%;
+  font-size: 2rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  text-align: center;
+  border: none;
+  outline: none;
+  padding: 0 0.5rem;
+  border-radius: 2rem;
+}
+
+.Weight-Section {
+  width: 100%;
+  height: 200px;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--green);
+}
+
+.Patient-Prescription {
+  width: 35%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Patient-Prescription-Container {
+  width: 100%;
+  height: 75%;
+  background: var(--green);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Patient-Prescription-Container header {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Patient-Prescription-Container header h5 {
+  font-size: 2rem;
+  font-family: var(--Montserrat);
+  font-weight: var(--h1-font-weight);
+  color: var(--white);
+}
+
+.Patient-Prescription-Input {
+  width: 80%;
+  height: 50px;
+  border-radius: 2rem;
+  border: none;
+  outline: transparent;
+  font-size: 1rem;
+  padding: 0 1rem;
+}
