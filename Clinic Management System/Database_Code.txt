@@ -1,0 +1,46 @@
+-- 1. Create the database
+CREATE DATABASE Clinic_Management_System_DB;
+
+-- 2. Switch to the created database
+USE Clinic_Management_System_DB;
+
+-- 3. Create the Administrator Table
+CREATE TABLE Administrator_Table (
+    Account_No INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for each admin
+    Account_Name VARCHAR(255) NOT NULL,        -- Name of the admin
+    Username VARCHAR(100) NOT NULL UNIQUE,     -- Admin's username (must be unique)
+    Email VARCHAR(255) NOT NULL UNIQUE,        -- Admin's email (must be unique)
+    Password VARCHAR(255) NOT NULL,            -- Admin's password (hashed for security)
+    Creation_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Timestamp when the account is created
+);
+
+-- 4. Create the Patient Records Table
+CREATE TABLE Patient_Records_Table (
+    Record_No INT AUTO_INCREMENT PRIMARY KEY,   -- Unique identifier for each patient record
+    Image LONGBLOB,                             -- Patient's image (stored as binary large object)
+    Name VARCHAR(255) NOT NULL,                  -- Patient's full name
+    Age INT NOT NULL,                           -- Patient's age
+    Gender VARCHAR(50) NOT NULL,                -- Patient's gender
+    Birthdate DATE NOT NULL,                    -- Patient's birthdate
+    Student_Number VARCHAR(100) NOT NULL UNIQUE, -- Patient's unique student number
+    Student_Year_Level VARCHAR(50) NOT NULL,    -- Student's year level
+    Section VARCHAR(50) NOT NULL,               -- Patient's section or class
+    Phone_Number VARCHAR(20) NOT NULL,          -- Patient's phone number
+    Email VARCHAR(255) NOT NULL UNIQUE,         -- Patient's email (must be unique)
+    Address VARCHAR(255) NOT NULL,              -- Patient's address
+    Height FLOAT,                               -- Patient's height
+    Weight FLOAT,                               -- Patient's weight
+    Illness1 VARCHAR(255),                      -- First recorded illness
+    Illness1_Date DATE,                         -- Date of first illness
+    Illness2 VARCHAR(255),                      -- Second recorded illness
+    Illness2_Date DATE,                         -- Date of second illness
+    Illness3 VARCHAR(255),                      -- Third recorded illness
+    Illness3_Date DATE,                         -- Date of third illness
+    Prescription1 VARCHAR(255),                 -- First prescribed medication
+    Prescription2 VARCHAR(255),                 -- Second prescribed medication
+    Prescription3 VARCHAR(255),                 -- Third prescribed medication
+    Record_Creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Timestamp when the record was created
+);
+
+-- Credits:
+-- Code by RandolphDR
