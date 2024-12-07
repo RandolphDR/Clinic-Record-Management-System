@@ -1,0 +1,39 @@
+CREATE DATABASE Clinic_Management_System_DB;
+
+USE Clinic_Management_System_DB;
+
+CREATE TABLE Administrator_Table (
+    Account_No INT AUTO_INCREMENT PRIMARY KEY,
+    Account_Name VARCHAR(255) NOT NULL,
+    Username VARCHAR(100) NOT NULL UNIQUE,
+    Email VARCHAR(255) NOT NULL UNIQUE,
+    Password VARCHAR(255) NOT NULL,
+    Creation_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Patient_Records_Table (
+    Record_No INT AUTO_INCREMENT PRIMARY KEY,
+    Image LONGBLOB,
+    Name VARCHAR(255) NOT NULL,
+    Age INT NOT NULL,
+    Gender VARCHAR(50) NOT NULL,
+    Birthdate DATE NOT NULL,
+    Student_Number VARCHAR(100) NOT NULL UNIQUE,
+    Student_Year_Level VARCHAR(50) NOT NULL,
+    Section VARCHAR(50) NOT NULL,
+    Phone_Number VARCHAR(20) NOT NULL,
+    Email VARCHAR(255) NOT NULL UNIQUE,
+    Address VARCHAR(255) NOT NULL,
+    Height FLOAT,
+    Weight FLOAT,
+    Illness1 VARCHAR(255),
+    Illness1_Date DATE,
+    Illness2 VARCHAR(255),
+    Illness2_Date DATE,
+    Illness3 VARCHAR(255),
+    Illness3_Date DATE,
+    Prescription1 VARCHAR(255),
+    Prescription2 VARCHAR(255),
+    Prescription3 VARCHAR(255),
+    Record_Creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
